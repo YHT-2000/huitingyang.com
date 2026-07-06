@@ -323,8 +323,7 @@ img {
 .research-item h3,
 .paper h3,
 .working-list h3,
-.timeline h3,
-.compact-panel h3 {
+.timeline h3 {
   margin: 0;
   font-size: 20px;
   line-height: 1.35;
@@ -376,34 +375,56 @@ img {
   border-bottom: 1px solid var(--line);
 }
 
-.teaching-list {
+.teaching-groups {
   display: grid;
-  gap: 0;
+  gap: 30px;
   border-top: 1px solid var(--line);
+  padding-top: 26px;
 }
 
-.teaching-item {
+.teaching-group {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
-  gap: 26px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
+  gap: 12px;
 }
 
-.teaching-item p {
+.teaching-group h3 {
   margin: 0;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.course-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
   color: #333a42;
   font-size: 18px;
 }
 
-.cv-grid {
+.course-list li {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.28fr);
-  gap: clamp(32px, 5vw, 56px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: baseline;
 }
 
-.cv-grid .section-heading {
-  grid-column: 1 / -1;
+.course-list li::before {
+  content: "•";
+  position: absolute;
+  left: -18px;
+  color: var(--ink);
+}
+
+.course-list time {
+  color: var(--muted);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.education-section {
+  border-top: 1px solid var(--line);
 }
 
 .timeline {
@@ -422,21 +443,6 @@ img {
 .timeline time {
   color: var(--accent);
   font-weight: 700;
-}
-
-.compact-panel {
-  align-self: start;
-  border: 1px solid var(--line);
-  padding: 24px;
-  background: #fbfbfa;
-}
-
-.compact-panel ul {
-  display: grid;
-  gap: 12px;
-  margin: 16px 0 0;
-  padding-left: 18px;
-  color: var(--muted);
 }
 
 .contact-section {
@@ -511,7 +517,6 @@ img {
 
   .hero,
   .intro-grid,
-  .cv-grid,
   .contact-section {
     grid-template-columns: 1fr;
   }
@@ -558,11 +563,14 @@ img {
     width: 100%;
   }
 
-  .research-item,
-  .teaching-item,
   .timeline article {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .course-list li {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .section {
@@ -590,8 +598,7 @@ img {
     min-height: auto;
   }
 
-  .paper,
-  .compact-panel {
+  .paper {
     break-inside: avoid;
   }
 }

@@ -370,11 +370,6 @@ img {
   padding-top: 2px;
 }
 
-.muted-band {
-  max-width: var(--max);
-  background: var(--paper);
-}
-
 .working-list {
   display: grid;
   gap: 0;
